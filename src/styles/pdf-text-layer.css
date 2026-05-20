@@ -1,0 +1,31 @@
+/* PDF.js text layer — enables selection over rendered pages */
+.textLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  line-height: 1;
+  text-size-adjust: none;
+  forced-color-adjust: none;
+  transform-origin: 0 0;
+  z-index: 2;
+}
+
+.textLayer span,
+.textLayer br {
+  color: transparent;
+  position: absolute;
+  white-space: pre;
+  cursor: text;
+  transform-origin: 0 0;
+}
+
+.textLayer ::selection {
+  background: rgba(45, 106, 159, 0.35);
+}
+
+.highlight-overlay {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 2px;
+  z-index: 1;
+}
